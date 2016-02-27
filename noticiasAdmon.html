@@ -1,0 +1,83 @@
+
+
+<br/>
+<div  align="center" >
+    
+    <h1>Noticías regístradas  |  El Vocero </h1>
+    <div class="row" align="right">
+        <a href="#/newsUpdate/alta" class="btn btn-info">Nueva Noticia</a>  
+        
+    </div>
+    <div class="row">
+  <table class="table table-hover tabla" >
+      <tr  >
+      <th><b>&nbsp;</b></th>
+      <th><b>IMAGEN</b></th>
+    <th><b>TITULO</b></th>
+    <th><b>FECHA</b></th>
+    <th><b>MODIFICAR</b></th>
+    <th><b>SLIDER</b></th>
+    <th><b>PUBLICAR</b></th>
+    <th><b>ELIMINAR</b></th>
+    <th><b>FOTOS</b></th>
+  
+  </tr>
+  
+  <tr ng-repeat="a in admNew | limitTo:posicion | limitTo:-10">
+        <br/>
+  <br/>
+    <td><b>&nbsp;</b></td>   
+    <td ><img src="{{a.image}} " class="imagen" ></td>
+      <td><b>{{a.title}}</b></td> 
+      <td><b>{{a.fecha}}</b></td> 
+      <td><div align="center"><a  href="#/newsUpdate/{{ a.id }}"><img src="icons/1348165246_run-build-file.png" width="22" height="22"></a></div></td>
+      <td>
+      <div ng-switch on="{{a.slider}}">
+      <div align="center" ng-switch-when="0"><a href="newsUpdate/?idNoticias={{a.id}}&&slider=1"><img src="icons/off.png" width="22" height="22"></a></div>
+           
+      <div align="center" ng-switch-when="1"><a href="newsUpdate/?idNoticias={{a.id}}&&slider=0>"><img src="icons/on.png" width="22" height="22"></a></div>  
+     </div> 
+      </td>
+       <td>
+  <div ng-switch on="{{a.publi}}">
+      <div align="center" ng-switch-when="0"><a href="#/newsUpdate/{{a.id}}&&publicacion=1?>"><img src="icons/no.png" width="22" height="22"></a></div>
+           
+      <div align="center" ng-switch-when="1"><a href="#/newsUpdate/{{a.id}}&&publicacion=0?>"><img src="icons/yes.png" width="22" height="22"></a></div>  
+     </div> 
+      </td>
+      <td><div align="center"><button><a href="#/elmina/{{a.id}}"><img src="icons/1348165432_news-unsubscribe.png" width="22" height="22"></a></div></td>
+    <td><div align="center"><a href="multi-imagenes.php?idNoticias={{a.id}}"><img src="icons/eg.ico" width="22" height="22"></a></div></td>
+  
+  </tr>    
+  </table>
+        <button class="btn btn-info" ng-click="anterior()">Anterior</button> 
+        <button class="btn btn-info" ng-click="siguiente()">Siguiente</button>
+</div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

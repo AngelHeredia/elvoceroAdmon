@@ -1,0 +1,143 @@
+
+<div align="center">
+    <h1>   Modificacion de Datos </h1>
+    <h4>El Vocero | La Voz Oficial de la Noticia </h4>
+    
+    
+    <br/>
+    
+    <form name="upload" ng-submit="uploadFile()">
+         <div ng-show="creando">
+            <h2>Cargar Imagen:</h2>
+            <p><label> <input type="text" ng-model="file"> </label>  </p>
+            <p><label>  <input   type="file" id="file" class=" btn btn-block" name="file" uploader-model="file"></label></p> 
+            <input type="submit" value="enviar">
+                
+        </div> 
+    </form>
+</div>
+<hr>
+ <form  ng-submit="actualizarCambios()">
+<div align="left"  >
+  
+    <!-- Div que contiene la imagen del profesor -->
+    <div class="col-sm-3">
+      
+       
+          
+               
+         
+     
+    </div>
+
+    <!-- Div, donde se mostrará la bio del profesor -->
+   
+    
+    
+    
+    <div class="col-sm-9">
+            <br/>
+                    <br/>
+
+                    <h2>Titulo:</h2>
+                    <input  type="text" class="form-control" ng-model="noticiasUpdate.titulo" required>
+                    <br/>
+                    <h2>Sintesis:</h2>
+                    <input name="sintesis" type="text" class="form-control" ng-model="noticiasUpdate.sintesis" required>
+                    <br>
+                    <br>
+                    <h2>Contenido</h2>
+                    <textarea name="contenido" class="texto" cols="2" ng-model="noticiasUpdate.contenido" required></textarea>
+                     <br/>
+                    <br/>
+                    <input name="fecha" type="date" name="fecha" step="1" min="2013-01-01" max="2020-12-31" ng-model="noticiasUpdate.fecha" required>
+                    
+                    <br/>
+                    <br/>
+                     
+                    <select class="combo"name="municipios" method="POST"  >                                  
+                        <option   value="">Selecciona Municipio</option >
+                       
+                        <option ng-repeat="mu in mcipiosUpdate" value="{{mu.idm}}" >{{mu.mun}}</option >  
+                       
+                    </select>      
+                 
+                    <select name="menus" method="POST" class="combo"  >
+                        <option  value="">Selecciona Menu</option >
+                        <option ng-repeat="menu in menuUpdate" value="{{menu.idMenus}}">{{menu.menus}}</option ></select> 
+  
+                    
+    <select ng-model="noticiasUpdate.posicion"  name="posicion" class="combo">
+        <option ng-model="noticiasUpdate.posicion" value="1">Principal</option>
+    <option ng-model="noticiasUpdate.posicion" value="2">Otra</option>
+  </select>
+                    <br/>
+                     <br/>
+                    
+
+
+                       <div ng-hide="creando">
+                    <label><b>Slider:  </b></label>
+                  
+                    <div  ng-switch on="noticiasUpdate.slider" >
+                        <div ng-switch-when="0">
+                            
+                            <input name="slider" type="radio" id="slider" value="1" ng-model="noticiasUpdate.slider">
+                    <label>  Si</label>
+                   
+                    <input type="radio" name="slider" value="0" id="slider" checked="checked" ng-model="noticiasUpdate.slider">
+                    <label> No</label>   
+                     </div>   
+                        <div ng-switch-when="1">
+                        <input name="slider" type="radio" id="slider" value="1" checked="checked" ng-model="noticiasUpdate.slider">
+                    <label>  Si</label>
+                   
+                    <input type="radio" name="slider" value="0" id="slider" ng-model="noticiasUpdate.slider">
+                    <label> No</label>      
+                            
+                        </div>   
+                    </div>
+                    </div>
+                   
+                    
+                    
+                    
+                    
+                    <br/>
+                    <br/>
+                      <div ng-hide="creando">
+                    <label><b>Publicar: </b></label>
+                   
+                    <div  ng-switch on="noticiasUpdate.publicacion">
+                   
+                    <div ng-switch-when="0">
+                    <label>Si</label><input ng type="radio" name="publicado" id="opciones_1" value="1" ng-model="noticiasUpdate.publicacion">
+                    <label>No</label><input type="radio" name="publicado" id="opciones_0" value="0" checked="checked" ng-model="noticiasUpdate.publicacion">
+                    </div>
+                    
+                    <div ng-switch-when="1">
+                         <label>Si</label><input type="radio" name="publicado" id="opciones_1" value="1" checked="checked" ng-model="noticiasUpdate.publicacion">
+                    <label>No</label><input type="radio" name="publicado" id="opciones_0" value="0" ng-model="noticiasUpdate.publicacion"> </div>
+                    </div>
+                      </div>
+                        <input n type="hidden" id="idnoticias" ng-model="noticiasUpdate.id" > <button type="submit" class="btn btn-danger"> Actualizar </button>  
+                   
+    
+    
+    </div>
+                
+                  
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                   
+                </div>
+
+ </form>
+
+
+
+
+
+

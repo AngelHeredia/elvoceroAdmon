@@ -1,0 +1,32 @@
+
+<html ng-app="administracion"  >
+    <head>
+        <title>Administracion El Voceros</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <LINK type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+        <link type="text/css" rel="stylesheet" href="css/mis-estilos.css">
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+
+    </head>
+    <body>
+
+        <div ng-include="menuSuperior" ng-></div>
+
+        <!-- La pagina principal ira aquí -->
+        <div ng-view="">
+
+        </div>    
+
+        <div ng-include="menuInferior"></div>
+
+        <script src="js/lib/angular.min.js"></script>
+        <script src="js/lib/angular-route.min.js"></script>
+        <script src="js/lib/ui-bootstrap-tpls-1.1.2.min.js"></script>
+        <!-- JQUERY -->
+        <script src="js/jquery-1.12.0.min.js"></script>
+
+        <script src="js/elvoceroAdministracion.js"></script>
+        <script src="js/.js"></script>
+    </body>
+</html>
